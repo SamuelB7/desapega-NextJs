@@ -1,11 +1,13 @@
+import styles from './styles.module.scss'
+
 export function Header() {
     return (
-        <header>
-            <img src="#" alt="Logomarca" />
+        <header className={styles.headerContainer}>
+            <img src="/logo.png" alt="Logomarca" />
 
-            <div>
-                <input type="text"></input>
-            </div> 
+            <p>Desapegue daquilo que você não usa mais!</p>
+
+            <a href="/login">Entrar</a>
         </header>
     )
 }
