@@ -5,9 +5,15 @@ export function Header() {
         <header className={styles.headerContainer}>
             <img src="/logo.png" alt="Logomarca" />
 
-            <p>Desapegue daquilo que você não usa mais!</p>
+            <div className={styles.searchInput}>
+                <input type="text" name="search" placeholder="Procurar produto" />
+                <button type="submit">Buscar</button>
+            </div>
 
-            <a href="/login">Entrar</a>
+            <div>
+                <a href="#">Entrar</a>
+                <a href="#">Criar Conta</a>
+            </div>
         </header>
     )
 }
