@@ -1,8 +1,9 @@
 import { Categories } from '../components/Categories'
 import { Products } from '../components/Products'
-
 import { GetStaticProps } from 'next'
 import { api } from '../services/api'
+
+import styles from './home.module.scss'
 
 interface HomeProducts {
   id: string
@@ -18,9 +19,22 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
   return (
     <>
-    <Categories />
-    <Products />
-    <p>{JSON.stringify(props.products)}</p>
+      <Categories />
+      <h3>Produtos</h3>
+      <div className={styles.productsContainer}>
+          {props.products.map((product, index) => {
+            return (
+              <div className={styles.productCard}>
+              <a href={`product/${product.id}`}>
+                  <img src={product.file} alt={product.name} />
+                  <h4>{product.name}</h4>
+                  <h4>{product.price}</h4>
+                  <input type="hidden" value={product.id} />
+              </a>
+          </div>
+            )
+          })}
+      </div>
     </>
   )
 }
