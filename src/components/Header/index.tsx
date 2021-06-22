@@ -7,7 +7,9 @@ export function Header() {
 
             <div className={styles.searchInput}>
                 <input type="text" name="search" placeholder="Procurar produto" />
-                <button type="submit">Buscar</button>
+                <button type="submit">
+                    <img src="/loupe.png" alt="Buscar" />
+                </button>
             </div>
 
             <div>

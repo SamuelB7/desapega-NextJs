@@ -21,7 +21,7 @@ export default function Home({ products }: HomeProps) {
   return (
     <>
       <Categories />
-      <h3>Produtos</h3>
+      <h3 id={styles.h3}>Produtos</h3>
       <div className={styles.productsContainer}>
           {products.map((product) => {
             return (

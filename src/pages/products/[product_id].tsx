@@ -15,11 +15,30 @@ interface ProductProp {
     product: Product
 }
 
-export default function Product({ data }) {
+export default function Product({ product, photos }) {
     const router = useRouter()
 
     return (
-        <div>{JSON.stringify(data)}</div>
+        <div className="productDisplay">
+            {/* <div>{JSON.stringify(product)}</div>
+            <div>{JSON.stringify(photos)}</div> */}
+            <div className="productPhoto">
+                <img src={photos[0]} alt={product.name}/>
+            </div>
+
+            <div className="productInfor">
+                <h3>{product.name}</h3>
+                <p>Vendido por: {product.seller}</p>
+                <h3>{product.price}</h3>
+                <div>
+                    <h4>Descrição</h4>
+                    <p>{product.description}</p>
+                </div>
+            </div>
+            <div className="otherPhotos">
+
+            </div>
+        </div>
     )
 }
 
@@ -38,9 +57,13 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         seller_email: data[0].user.email
     } */
 
+    const product = data.product
+    const photos = data.photos
+
     return {
         props: {
-            data,
+            product,
+            photos
         }
     }
 }

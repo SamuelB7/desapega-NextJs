@@ -1,5 +1,5 @@
 .headerContainer {
-    background: var(--purple);
+    background: var(--red);
     height: 7rem;
 
     display: flex;
@@ -8,7 +8,7 @@
 
     padding: 2rem 4rem;
 
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid white;
 
     img {
         max-width: 10rem;
@@ -20,13 +20,13 @@
 
         text-decoration: none;
         color: var(--grey);
-        background: var(--orange);
+        background: white;
 
         display: flex;
         justify-content: center;
         align-items: center;
 
-        border-radius: 30px;
+        border-radius: 5px;
 
         font-weight: bold;
 
@@ -38,13 +38,31 @@
 }
 
 .searchInput {
+    display: flex;
+    align-items: center;
+    
     input {
         width: 30rem;
         height: 2rem;
-        border-radius: 10px;
+        border-radius: 5px 0px 0px 5px;
+        border: none;
     }
     
     button {
-        font-weight: bold;
+        background: white;
+        border: none;
+        border-radius: 0px 5px 5px 0px;
+        max-height: 100%;
+        height: 2rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 1.5rem;
+            max-height: 1.5rem;
+            
+            display: flex;
+            align-items: center;
+        }
     }
 }
