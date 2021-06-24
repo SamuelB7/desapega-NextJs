@@ -1,0 +1,26 @@
+#h3 {
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+}
+
+.productsContainer {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.productCard {
+    text-align: center;
+    a {
+        text-decoration: none;
+        color: var(--grey);
+    }
+    
+    img {
+        max-width: 250px;
+        max-height: 130px;  
+        width: auto;
+        height: auto;
+    }
+}

@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 import { api } from '../../services/api'
-import { GetServerSideProps, GetStaticPaths } from 'next'
+import { GetServerSideProps } from 'next'
 import { useState } from 'react'
 
 interface Product {
@@ -24,7 +24,7 @@ export default function Product({ product, photos }) {
     }    
 
     return (
-        <div className={styles.productDisplay}>
+        <div className={styles.productDisplay} id={product.id}>
             {/* <div>{JSON.stringify(product)}</div>
             <div>{JSON.stringify(photos)}</div> */}
             <div id="productPhoto" className={styles.productPhoto}>
