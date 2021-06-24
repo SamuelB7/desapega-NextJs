@@ -11,6 +11,7 @@ interface HomeProducts {
   name: string
   price: string
   file: string
+  link: string
 }
 
 interface HomeProps {

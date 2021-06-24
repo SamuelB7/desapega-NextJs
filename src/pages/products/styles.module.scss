@@ -1,0 +1,46 @@
+.productDisplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+
+    margin: 30px;
+}
+
+.productPhoto {
+    img {
+        max-width: 500px;
+        max-height: 500px;  
+        width: auto;
+        height: auto;
+    }
+}
+
+.productInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10rem;
+}
+
+.otherPhotos {
+    
+    img {
+        margin: 5px 20px;
+        max-width: 150px;
+        max-height: 150px;  
+        width: auto;
+        height: auto;
+    }
+}
+
+.contactSeller {
+    margin-left: 10rem;
+    
+    img {
+        margin: 5px 10px;
+        max-width: 50px;
+        max-height: 50px;  
+        width: auto;
+        height: auto;
+    }
+}

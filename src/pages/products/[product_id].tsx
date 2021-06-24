@@ -1,3 +1,4 @@
+import styles from './styles.module.scss'
 import { useRouter } from 'next/router'
 import { api } from '../../services/api'
 import { GetServerSideProps, GetStaticPaths } from 'next'
@@ -19,15 +20,15 @@ export default function Product({ product, photos }) {
     const router = useRouter()
 
     return (
-        <div className="productDisplay">
+        <div className={styles.productDisplay}>
             {/* <div>{JSON.stringify(product)}</div>
             <div>{JSON.stringify(photos)}</div> */}
-            <div className="productPhoto">
+            <div className={styles.productPhoto}>
                 <img src={photos[0]} alt={product.name}/>
             </div>
 
-            <div className="productInfor">
-                <h3>{product.name}</h3>
+            <div className={styles.productInfo}>
+                <h1>{product.name}</h1>
                 <p>Vendido por: {product.seller}</p>
                 <h3>{product.price}</h3>
                 <div>
@@ -35,8 +36,19 @@ export default function Product({ product, photos }) {
                     <p>{product.description}</p>
                 </div>
             </div>
-            <div className="otherPhotos">
 
+            <div className={styles.otherPhotos}>
+                {photos.map((photo) => {
+                    return (
+                        <img src={photo} alt="photo"/>
+                    )
+                })}
+            </div>
+
+            <div className={styles.contactSeller}>
+                <h3>Fale com o vendedor</h3>
+                <a href="#"><img src="/whatsapp.png" alt="Whatsapp"/></a>
+                <a href="#"><img src="/new-email.png" alt="Email"/></a>
             </div>
         </div>
     )
