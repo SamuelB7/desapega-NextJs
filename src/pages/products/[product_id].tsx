@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
-import { useRouter } from 'next/router'
 import { api } from '../../services/api'
 import { GetServerSideProps, GetStaticPaths } from 'next'
+import { useState } from 'react'
 
 interface Product {
     id: string
@@ -17,14 +17,18 @@ interface ProductProp {
 }
 
 export default function Product({ product, photos }) {
-    const router = useRouter()
+    let [photoIndex, setPhotoIndex] = useState(0)
+
+    function handleSectedImages(index) {
+        setPhotoIndex(index)
+    }    
 
     return (
         <div className={styles.productDisplay}>
             {/* <div>{JSON.stringify(product)}</div>
             <div>{JSON.stringify(photos)}</div> */}
-            <div className={styles.productPhoto}>
-                <img src={photos[0]} alt={product.name}/>
+            <div id="productPhoto" className={styles.productPhoto}>
+                <img src={photos[photoIndex]} alt={product.name}/>
             </div>
 
             <div className={styles.productInfo}>
@@ -38,9 +42,11 @@ export default function Product({ product, photos }) {
             </div>
 
             <div className={styles.otherPhotos}>
-                {photos.map((photo) => {
+                {photos.map((photo, index) => {
                     return (
-                        <img src={photo} alt="photo"/>
+                        <div id="productPhotosDisplay" onClick={() => handleSectedImages(index)} className={styles.productPhotosDisplay}>
+                            <img src={photo} alt="photo" key={index}/>
+                        </div>
                     )
                 })}
             </div>
@@ -79,3 +85,5 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         }
     }
 }
+
+

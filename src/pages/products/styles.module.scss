@@ -23,7 +23,7 @@
 }
 
 .otherPhotos {
-    
+    display: flex;
     img {
         margin: 5px 20px;
         max-width: 150px;
@@ -31,6 +31,10 @@
         width: auto;
         height: auto;
     }
+}
+
+.productPhotosDisplay {
+    cursor: pointer;
 }
 
 .contactSeller {
