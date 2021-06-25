@@ -1,8 +1,8 @@
 import styles from './styles.module.scss'
-import { Categories } from '../../components/Categories'
+import { Categories } from '../../../components/Categories'
 import Link from 'next/link'
 import { GetServerSideProps } from 'next'
-import { api } from '../../services/api'
+import { api } from '../../../services/api'
 
 export default function Category({ products }) {
     return (
@@ -13,7 +13,7 @@ export default function Category({ products }) {
               {products.map((product) => {
                 return (
                   <div key={product.id} className={styles.productCard}>
-                    <Link href={product.link}>
+                    <Link href={product.link} >
                       <a>
                           <img src={product.file} alt={product.name} />
                           <h4>{product.name}</h4>
@@ -44,7 +44,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         name: product.name,
         price: `R$${product.price}`,
         file: product.file,
-        link: `products/${product.id}`
+        link: `http://localhost:3000/products/${product.id}`
       }
     })
 

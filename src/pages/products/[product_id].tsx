@@ -24,7 +24,7 @@ export default function Product({ product, photos }) {
     }    
 
     return (
-        <div className={styles.productDisplay} id={product.id}>
+        <div className={styles.productDisplay} id={product.id} key={product.id}>
             {/* <div>{JSON.stringify(product)}</div>
             <div>{JSON.stringify(photos)}</div> */}
             <div id="productPhoto" className={styles.productPhoto}>
