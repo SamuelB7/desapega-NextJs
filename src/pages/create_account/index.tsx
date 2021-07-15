@@ -3,7 +3,7 @@ import { api } from '../../services/api'
 import styles from './styles.module.scss'
 
 export default function CreateAccount() {
-    
+
     function imagePreview() {
         let avatar = document.querySelector('input[id=avatar]').files[0]
         let preview = document.querySelector('#avatarPreview')
@@ -19,7 +19,7 @@ export default function CreateAccount() {
     return (
         <div className={styles.createAccount}>
             <h3>Criar Conta</h3>
-            <form action="http://localhost:7777/user/register" method="POST" encType="multipart/form-data">
+            <form action={process.env.USER_POST_URL} method="POST" encType="multipart/form-data">
                 <div className={styles.formGroup}>
                     <label htmlFor="name">Nome</label>
                     <input type="text" name="name" id="name"/>
